@@ -1,25 +1,24 @@
 <?php
-function convert($size,$unit) 
+function convert($size) 
 {
- if($unit == "KB")
- {
-  return $fileSize = round($size / 1024,4) . 'KB';	
- }
- if($unit == "MB")
- {
-  return $fileSize = round($size / 1024 / 1024,4) . 'MB';	
- }
- if($unit == "GB")
- {
-  return $fileSize = round($size / 1024 / 1024 / 1024,4) . 'GB';	
- }
+  if($size){
+        $precision = 2;
+        if ($size > 0) {
+            $size = (int) $size;
+            $base = log($size) / log(1024);
+            $suffixes = array(' bytes', ' KB', ' MB', ' GB', ' TB');
+            return round(pow(1024, $base - floor($base)), $precision) . $suffixes[floor($base)];
+        }
+    } else {
+        return $size ="Opps! File Does't Exits.";
+    }
 }
 
 if(isset($_POST['convert_size']))
 {
- $size=$_POST['size'];
- $unit=$_POST['convert_unit'];
- $size=convert($size,$unit);
+   $size=$_POST['size'];
+   // $unit=$_POST['convert_unit'];
+   $size=convert($size);
 }
 ?>
 
@@ -32,12 +31,12 @@ if(isset($_POST['convert_size']))
 
 <div id="convert_div">
  <form method="post"action="">
-  <input type="text" name="size" placeholder="Enter Bytes">
-  <select name="convert_unit">
+  <input type="text" name="size" placeholder="Enter Bytes" required="">
+<!--   <select name="convert_unit">
    <option>KB</option>
    <option>MB</option>
    <option>GB</option>
-  </select>
+  </select> -->
   <br>
   <input type="submit" name="convert_size" value="Convert Bytes">
  </form>
