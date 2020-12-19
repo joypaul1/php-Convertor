@@ -31,7 +31,12 @@ if(isset($_POST['convert_size']))
 
 <div id="convert_div">
  <form method="post"action="">
-  <input type="text" name="size" placeholder="Enter Bytes" required="">
+  <input type="text" name="size" placeholder="Enter Bytes" required="" onkeydown="return ( event.ctrlKey || event.altKey 
+                    || (47<event.keyCode && event.keyCode<58 && event.shiftKey==false) 
+                    || (95<event.keyCode && event.keyCode<106)
+                    || (event.keyCode==8) || (event.keyCode==9) 
+                    || (event.keyCode>34 && event.keyCode<40) 
+                    || (event.keyCode==46) )">
 <!--   <select name="convert_unit">
    <option>KB</option>
    <option>MB</option>
