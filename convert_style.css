@@ -1,0 +1,61 @@
+body
+{
+ margin:0 auto;
+ padding:0px;
+ text-align:center;
+ width:100%;
+ font-family: "Myriad Pro","Helvetica Neue",Helvetica,Arial,Sans-Serif;
+ background-color:#A9BCF5;
+}
+#wrapper
+{
+ margin:0 auto;
+ padding:105;
+ text-align:center;
+ width:995px;
+}
+#wrapper h1
+{
+ margin-top:50px;
+ font-size:45px;
+ color:#045FB4;
+}
+#wrapper h1 p
+{
+ font-size:18px;
+}
+#convert_div input[type="text"]
+{
+ width:400px;
+ height:55px;
+ padding-left:10px;
+ font-size:18px;
+ margin-bottom:15px;
+ border:none;
+ color:#045FB4;
+ font-weight:bold;
+}
+#convert_div select
+{
+ margin:0px;
+ padding:0px;
+ border:none;
+ width:70px;
+ height:55px;
+ margin-bottom:15px;
+ border:none;
+ color:#045FB4;
+ font-weight:bold;
+}
+#convert_div input[type="submit"]
+{
+ width:330px;
+ height:45px;
+ font-size:16px;
+ font-weight:bold;
+ background-color:#5882FA;
+ color:white;
+ border:none;
+ box-shadow:0px 4px 0px 0px #2E64FE;
+ border-radius:3px;
+}
